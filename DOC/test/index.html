@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		123
+	</title>
+</head>
+<body>
+<script type="text/javascript">
+	async function gen_image(promt, anti_promt) {
+		const params = {
+			type: "GENERATE",
+			style: "DEFALUT",
+			width: 1200,
+			height: 800,
+			num_images: 1,
+			negativePromptUnclip: anti_promt,
+			generateParams: {
+				query: promt,
+			}
+		}
+
+		const headers = {
+			'X-Key': `Key ${"91AE453F9E825CBA042C3BC58037DFFB"}`,
+			'X-Secret': `Secret ${"948FDBA43510929C4FA95EBBCF453314"}`
+		}
+
+
+		let model_id = 0;
+		{
+			let res = await fetch('https://api-key.fusionbrain.ai/key/api/v1/models', {
+				method: 'GET',
+				headers: headers
+			});
+			res = await res.json();
+			model_id = res[0].id;
+		}
+
+		let formData = new FormData();
+		formData.append('model_id', model_id);
+		formData.append('params', new Blob([JSON.stringify(params)], { type: "application/json" }));
+
+		let res = await fetch('https://api-key.fusionbrain.ai/key/api/v1/text2image/run', {
+			method: 'POST',
+			headers: headers,
+			body: formData,
+		});
+		let json = await res.json();
+		console.log(json);
+
+		let uuid = json.uuid;
+
+		let image = 0;
+
+		while(1){
+			if(image != 0) {
+				break;
+			}
+
+			setTimeout(async () => {
+				let res = await fetch('https://api-key.fusionbrain.ai/key/api/v1/text2image/status/' + uuid, {
+					method: 'GET',
+					headers: headers,
+				});
+				let json = await res.json();
+
+				switch (json.status) {
+					case 'INITIAL':
+					case 'PROCESSING':
+						break;
+
+					case 'DONE':
+						image = json.images[0];
+						break;
+
+					case 'FAIL':
+						image = "error";
+						break;
+				}
+			}, 3000);
+
+		}
+
+		return { "data": image , "mime": "jpg"};
+	}
+
+	console.log(gen_image("котик", "собака"));
+</script>
+</body>
+</html>

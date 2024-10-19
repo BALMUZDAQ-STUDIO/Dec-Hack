@@ -1,0 +1,15 @@
+meta {
+  name: Get my data
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://127.0.0.1:5001/api/v1/users/@me
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVkN2QyNTMwLTc2MWYtNDE1ZS04NTRlLWMzZDk1YTQ2ZmJkOSIsImlhdCI6MTcyOTMzMTcwNn0.BgnbJgM09dYKet3nN_j21TkkfJMKkOvHhjtz5rJ-BXQ
+}

@@ -1,0 +1,21 @@
+meta {
+  name: Get courses
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://127.0.0.1:5001/api/v1/courses/?i_start=0&i_end=5
+  body: none
+  auth: none
+}
+
+params:query {
+  i_start: 0
+  i_end: 5
+  ~search: design
+}
+
+headers {
+  Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImVkN2QyNTMwLTc2MWYtNDE1ZS04NTRlLWMzZDk1YTQ2ZmJkOSIsImlhdCI6MTcyOTMzMTcwNn0.BgnbJgM09dYKet3nN_j21TkkfJMKkOvHhjtz5rJ-BXQ
+}
