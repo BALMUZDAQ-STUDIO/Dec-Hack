@@ -15,8 +15,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.createThread = void 0;
 const openai_1 = require("openai");
 const fs_1 = __importDefault(require("fs"));
+const config_json_1 = __importDefault(require("../../../config/config.json"));
 const createThread = (pdfUrl, promt) => __awaiter(void 0, void 0, void 0, function* () {
-    const openai = new openai_1.OpenAI({ apiKey: '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' });
+    const openai = new openai_1.OpenAI({ apiKey: config_json_1.default.ai.token });
     // A user wants to attach a file to a specific message, let's upload it.
     const file = yield openai.files.create({
         file: fs_1.default.createReadStream(pdfUrl),

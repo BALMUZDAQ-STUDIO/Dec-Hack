@@ -13,7 +13,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const openai_1 = __importDefault(require("openai"));
-const openai = new openai_1.default({ apiKey: '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' });
+const config_json_1 = __importDefault(require("../../../config/config.json"));
+const openai = new openai_1.default({ apiKey: config_json_1.default.ai.token });
 const connect = () => __awaiter(void 0, void 0, void 0, function* () {
     console.log('start connect');
     try {
