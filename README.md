@@ -2,7 +2,7 @@
 
 <h1 align="center">CourseFusion Backend</h1>
 
-<img src="https://raw.githubusercontent.com/BALMUSDAQ-STUDIO/Balmuzdaq-logos/refs/heads/main/Снимок%20экрана%202024-09-28%20в%2019.24.10.png" alt="Alt text" width="400" align="right"/>
+<!-- <img src="https://raw.githubusercontent.com/BALMUSDAQ-STUDIO/Balmuzdaq-logos/refs/heads/main/Снимок%20экрана%202024-09-28%20в%2019.24.10.png" alt="Alt text" width="400" align="right"/> -->
 
 
 
