@@ -88,7 +88,7 @@
     }
     ```
 
-4. Run the bot:
+4. Run the server:
 
     ```bash
     npm run dev
