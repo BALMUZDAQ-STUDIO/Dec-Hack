@@ -5,15 +5,15 @@ meta {
 }
 
 get {
-  url: http://127.0.0.1:5001/api/v1/courses/?i_start=0&i_end=5
+  url: http://127.0.0.1:5001/api/v1/courses/?i_start=0&i_end=10&search=design
   body: none
   auth: none
 }
 
 params:query {
   i_start: 0
-  i_end: 5
-  ~search: design
+  i_end: 10
+  search: design
 }
 
 headers {

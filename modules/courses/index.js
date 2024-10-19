@@ -12,6 +12,8 @@ const verify = require('../users').verify_token;
 
 const config = require('../../config/config.json');
 
+const ai_gen = require("./dist/call-all");
+
 const api = express.Router();
 
 const upload = multer({dest:"uploads"});
@@ -94,7 +96,7 @@ api.get('/' , verify, function (req, res) {
 api.get('/:id' , verify, function (req, res) {
 	const sql_comm = "SELECT * FROM courses WHERE id = ?;";
 
-	pool_creator.query(sql_comm, [ req.user_id ], function(err_sql, data) {
+	pool_creator.query(sql_comm, [ req.params.id ], function(err_sql, data) {
 		if (err_sql || data.length === 0) {
 			res.status(404)
 			   .json({"error": {
@@ -113,7 +115,7 @@ api.get('/:id' , verify, function (req, res) {
 api.get('/:id/image' , function (req, res) {
 	const sql_comm = "SELECT image, image_type FROM courses WHERE id = ?;";
 
-	pool_creator.query(sql_comm, [ req.user_id ], function(err_sql, data) {
+	pool_creator.query(sql_comm, [ req.params.id ], function(err_sql, data) {
 		if (err_sql || data.length === 0) {
 			res.status(404)
 			   .json({"error": {

@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AUTH_SECRET = exports.CONFLICT_STATUS = exports.OK_STATUS = exports.FORBIDDEN_STATUS = exports.UNAUTHORIZED_STATUS = exports.BAD_REQUEST_STATUS = exports.NOT_FOUND_STATUS = exports.INTERNAL_ERROR_STATUS = exports.OK_MESSAGE = exports.UNAUTHORIZED_MESSAGE = exports.WRONG_CREDENTIALS_MESSAGE = exports.BAD_REQUEST_MESSAGE = exports.FORBIDDEN_MESSAGE = exports.NOT_FOUND_MESSAGE = exports.INTERNAL_ERROR_MESSAGE = void 0;
+exports.INTERNAL_ERROR_MESSAGE = 'Internal Server Error';
+exports.NOT_FOUND_MESSAGE = 'Not Found';
+exports.FORBIDDEN_MESSAGE = 'Forbidden';
+exports.BAD_REQUEST_MESSAGE = 'Bad Request';
+exports.WRONG_CREDENTIALS_MESSAGE = 'Wrong email or password';
+exports.UNAUTHORIZED_MESSAGE = 'Unauthorized';
+exports.OK_MESSAGE = 'Ok';
+exports.INTERNAL_ERROR_STATUS = 500;
+exports.NOT_FOUND_STATUS = 404;
+exports.BAD_REQUEST_STATUS = 400;
+exports.UNAUTHORIZED_STATUS = 401;
+exports.FORBIDDEN_STATUS = 403;
+exports.OK_STATUS = 200;
+exports.CONFLICT_STATUS = 409;
+exports.AUTH_SECRET = 'some-secret-key';

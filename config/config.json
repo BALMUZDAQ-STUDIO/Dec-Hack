@@ -1,25 +1,26 @@
 {
 	"server": {
-		"host": "0.0.0.0",
-		"port": "5001"
+		"host": "",
+		"port": 0
 	},
 	"oauth_google": {
 		"id": "",
 		"secret": "",
-		"redirec_url": "/api/users/oauth/google"
+		"redirec_url": "/api/v1/users/oauth/google"
 	},
 	"auth": {
-		"rounds": 6,
-		"secret": "123456789dsc"
+		"rounds": 0,
+		"secret": ""
 	},
 	"database": {
-		"user": "dechack",
-		"password": "k)BvH[mA,5cnSH?Pe{:"
+		"user": "",
+		"password": ""
 	},
 	"image_gen": {
-		"token": "91AE453F9E825CBA042C3BC58037DFFB",
-		"secret": "948FDBA43510929C4FA95EBBCF453314"
+		"token": "",
+		"secret": ""
+	},
+	"ai": {
+		"token": ""
 	}
-
-
 }
