@@ -19,7 +19,7 @@
 
 - **JavaScript**: Main programming language used to develop the server.
   - **ExpressJS**: this is a JS framework for programming web applications.
-  - **MySQL**: Converts text-based messages into voice format for users who prefer listening.
+  - **MySQL**: Fast DataBase for store all data.
 - **OpenAI API**: Powers the AI-drien conversations, providing empathetic and context-aware responses to users.
 
 ## Installation
@@ -100,18 +100,6 @@
 - `modules/courses/index.js`: API for courses.
 - `modules/users/index.js`: API for users.
 - `modules/chatbots/index.js`: API for chatbots.
-
-
-
-## Contributing
-
-Contributions are welcome! Please fork the repository, create a new branch for your features or bug fixes, and submit a pull request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a pull 
 
 
 ## Authors
